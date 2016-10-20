@@ -1,0 +1,63 @@
+{
+  "name": "note-editor",
+  "version": "1.0.0",
+  "description": "Note editor like Google Keep",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --hot --inline --config=config/webpack.conf.js",
+    "test": "karma start config/karma.conf.js",
+    "build": "webpack --config=config/webpack.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eukorolik/note-editor.git"
+  },
+  "keywords": [
+    "note"
+  ],
+  "author": "Eugenia Korolik",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eukorolik/note-editor/issues"
+  },
+  "homepage": "https://github.com/eukorolik/note-editor#readme",
+  "dependencies": {
+    "core-js": "^2.4.1",
+    "material-design-lite": "^1.2.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.5.1",
+    "babel-core": "^6.17.0",
+    "babel-eslint": "^7.0.0",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-external-helpers": "^6.8.0",
+    "babel-plugin-istanbul": "^2.0.3",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "css-loader": "^0.25.0",
+    "eslint": "^3.8.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-loader": "^1.6.0",
+    "eslint-plugin-import": "1.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.4.1",
+    "extract-loader": "^0.0.2",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.4",
+    "html-webpack-plugin": "^2.22.0",
+    "istanbul": "^0.4.5",
+    "node-sass": "^3.10.1",
+    "postcss-inline-svg": "^2.2.0",
+    "postcss-loader": "^1.0.0",
+    "postcss-normalize": "^0.3.0",
+    "postcss-svgo": "^2.1.5",
+    "pug-html-loader": "^1.0.9",
+    "sass-loader": "^4.0.2",
+    "source-map-loader": "^0.1.5",
+    "uglify-loader": "^1.3.0",
+    "universal-style-loader": "^0.16.1",
+    "webpack": "2.1.0-beta.25",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
