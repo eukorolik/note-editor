@@ -5,7 +5,7 @@ import './core/dependencies';
 
 // import './dialog-window';
 import './layout';
-// import './main-menu';
+import './main-menu';
 // import './note';
 // import './note-editor';
 // import './note-list';

@@ -1,0 +1,23 @@
+.main-menu {
+  &__container{
+    .mdl-layout-title {
+      line-height: 64px;
+      padding-left: 40px;
+    }
+
+    .tag {
+      flex-direction: row;
+      display: flex;
+
+      a {
+        flex-grow: 3;
+      }
+
+      button {
+        height: 100%;
+        flex-grow: 1;
+        color: grey;
+      }
+    }
+  }
+}
