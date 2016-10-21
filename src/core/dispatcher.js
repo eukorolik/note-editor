@@ -13,7 +13,12 @@ export class Dispatcher {
       throw new Error(`${declaration.name} does not extend Component`);
     }
 
+    if (Dispatcher.components.has(element)) {
+      return;
+    }
+
     element.innerHTML = declaration.template();
+    Dispatcher.findComponents(element);
 
     const instance = new declaration(element);
     Dispatcher.components.set(element, instance);
