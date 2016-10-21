@@ -1,0 +1,23 @@
+.note-list {
+  &__add {
+    right: 5%;
+    bottom: 5%;
+    z-index: 2;
+    position: fixed;
+  }
+  &__container {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style-type: none;
+      margin-right: 20px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
