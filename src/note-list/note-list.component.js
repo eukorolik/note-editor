@@ -1,10 +1,9 @@
 import {Component, Registry} from '../core';
-import {NeZone} from '../core/ne-zone';
 import {Dispatcher} from '../core/dispatcher';
 import {NoteComponent} from '../note';
 
 export class NoteListComponent extends Component {
-  _data = [
+  data = [
     {title: 'Old Nun', text: 'My little summer child #got'},
     {title: 'The red head', text: 'You know nothing, Jon Snow #got'}
   ];
@@ -21,18 +20,13 @@ export class NoteListComponent extends Component {
     return require('./note-list.component.pug');
   }
 
-  get data() {
-    return this._data;
-  }
-
-  set data(value) {
-    this._data = value;
-  }
-
   constructor(element) {
     super(element);
     this.prepareNoteRepeat();
     this.runNoteRepeat();
+    this.element.getElementsByClassName('note-list__add')[0]
+      .addEventListener('click', () => {
+      });
   }
 
   prepareNoteRepeat() {
@@ -43,7 +37,7 @@ export class NoteListComponent extends Component {
   }
 
   runNoteRepeat() {
-    Component.repeat(this.noteRepeat.target, this.noteRepeat.parent, this._data,
+    Component.repeat(this.noteRepeat.target, this.noteRepeat.parent, this.data,
       (element, value) => {
         const note = element.getElementsByTagName('note')[0];
         const instance = Dispatcher.createComponent(note, NoteComponent);

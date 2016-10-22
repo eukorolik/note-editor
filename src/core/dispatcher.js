@@ -14,7 +14,7 @@ export class Dispatcher {
     }
 
     if (Dispatcher.components.has(element)) {
-      return;
+      return null;
     }
 
     element.innerHTML = declaration.template();

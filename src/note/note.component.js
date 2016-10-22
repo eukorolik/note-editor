@@ -30,7 +30,6 @@ export class NoteComponent extends Component {
 
   listen() {
     NeZone.onMicrotaskEmpty.subscribe(() => {
-      console.log(1);
       this.elements.title.textContent = this.title;
       this.elements.text.textContent = this.text;
     });

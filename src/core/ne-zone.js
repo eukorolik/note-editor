@@ -6,10 +6,14 @@ export class NeZone {
 
   static own = Zone.current.fork({
     name: 'own-zone',
+    onInvokeTask: (delegate, current, target, task, applyThis, applyArgs) => {
+      task.callback(applyArgs);
+      if (task.type !== 'microTask') {
+        NeZone.own.scheduleMicroTask('onInvokeTask', () => {});
+      }
+    },
     onHasTask: (delegate, current, target, hasTaskState) => {
       delegate.hasTask(target, hasTaskState);
-      console.log(current === target);
-      console.log(hasTaskState.change);
 
       if (current === target) {
         if (hasTaskState.change === 'microTask') {

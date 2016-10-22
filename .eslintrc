@@ -19,5 +19,8 @@
     "no-continue": 0,
     "new-cap": 0,
     "react/sort-comp": 0
+  },
+  "globals": {
+    "Zone": true
   }
 }
