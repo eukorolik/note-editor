@@ -17,6 +17,7 @@
     "linebreak-style": 0,
     "import/prefer-default-export": 0,
     "no-continue": 0,
-    "new-cap": 0
+    "new-cap": 0,
+    "react/sort-comp": 0
   }
 }

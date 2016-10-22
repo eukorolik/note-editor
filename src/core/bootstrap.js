@@ -1,5 +1,10 @@
 import {Dispatcher} from './dispatcher';
+import {NeZone} from './ne-zone';
 
 export function bootstrap(element) {
-  Dispatcher.findComponents(element);
+  NeZone.own.run(() => {
+    Dispatcher.findComponents(element);
+  });
+
+  NeZone.onMicrotaskEmpty.subscribe((e) => {console.log(e)});
 }

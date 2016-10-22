@@ -11,3 +11,4 @@ import 'core-js/es6/array';
 import 'core-js/es6/regexp';
 import 'core-js/es6/map';
 import 'core-js/es6/set';
+import 'zone.js/dist/zone';

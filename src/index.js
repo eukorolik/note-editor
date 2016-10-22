@@ -6,9 +6,9 @@ import './core/dependencies';
 // import './dialog-window';
 import './layout';
 import './main-menu';
-// import './note';
-// import './note-editor';
-// import './note-list';
+import './note';
+import './note-editor';
+import './note-list';
 import './toolbar';
 
 import {bootstrap} from './core/bootstrap';

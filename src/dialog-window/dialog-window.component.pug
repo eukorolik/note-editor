@@ -1,0 +1,22 @@
+.dialog-window__container
+  button#show-dialog.mdl-button(type='button') +
+  dialog.mdl-dialog
+    h4.mdl-dialog__title Delete this tag?
+    .mdl-dialog__content
+      p
+        | This action deletes this tag in all notes. Are you sure?
+    .mdl-dialog__actions
+      button.mdl-button(type='button') Agree
+      button.mdl-button.close(type='button') Disagree
+  //script.
+    var dialog = document.querySelector('dialog');
+    var showDialogButton = document.querySelector('#show-dialog');
+    if (!dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog);
+    }
+    showDialogButton.addEventListener('click', function () {
+      dialog.showModal();
+    });
+    dialog.querySelector('.close').addEventListener('click', function () {
+      dialog.close();
+    });

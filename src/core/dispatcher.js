@@ -22,6 +22,8 @@ export class Dispatcher {
 
     const instance = new declaration(element);
     Dispatcher.components.set(element, instance);
+
+    return instance;
   }
 
   static findComponents(element) {

@@ -12,4 +12,12 @@ export class Component {
   constructor(element) {
     this.element = element;
   }
+
+  static repeat(target, parent, values, callback) {
+    for (const value of values) {
+      const clone = target.cloneNode(true);
+      callback(clone, value);
+      parent.appendChild(clone);
+    }
+  }
 }
