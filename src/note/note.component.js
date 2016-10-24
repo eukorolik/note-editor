@@ -1,13 +1,16 @@
+import {Observable} from 'rxjs/Observable';
 import {Component, Registry} from '../core';
 import {NeZone} from '../core/ne-zone';
 
 export class NoteComponent extends Component {
   title;
   text;
-  elements = {
+  htmlElements = {
     title: null,
-    text: null
+    text: null,
+    container: null
   };
+  onEditContainerClick;
 
   static selector() {
     return 'note';
@@ -17,23 +20,31 @@ export class NoteComponent extends Component {
     return require('./note.component.pug');
   }
 
-  constructor(element) {
-    super(element);
+  constructor(element, service) {
+    super(element, service);
     this.prepareElements();
     this.listen();
+    this.prepareEdit();
   }
 
   prepareElements() {
-    this.elements.title = this.element.getElementsByClassName('note__title')[0];
-    this.elements.text = this.element.getElementsByClassName('note__text')[0];
+    this.htmlElements.title = this.element.getElementsByClassName('note__title')[0];
+    this.htmlElements.text = this.element.getElementsByClassName('note__text')[0];
+    this.htmlElements.container = this.element.getElementsByClassName('note__container')[0];
   }
 
   listen() {
     NeZone.onMicrotaskEmpty.subscribe(() => {
-      this.elements.title.textContent = this.title;
-      this.elements.text.textContent = this.text;
+      this.htmlElements.title.textContent = this.title;
+      this.htmlElements.text.textContent = this.text;
     });
   }
+
+  prepareEdit() {
+    this.onEditContainerClick = Observable.fromEvent(this.htmlElements.container, 'click');
+  }
+
+
 
 }
 

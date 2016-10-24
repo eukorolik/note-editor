@@ -9,7 +9,7 @@ export class NeZone {
     onInvokeTask: (delegate, current, target, task, applyThis, applyArgs) => {
       task.callback(applyArgs);
       if (task.type !== 'microTask') {
-        NeZone.own.scheduleMicroTask('onInvokeTask', () => {});
+        NeZone.recycle('onInvokeTask');
       }
     },
     onHasTask: (delegate, current, target, hasTaskState) => {
@@ -35,5 +35,9 @@ export class NeZone {
     if (!hasMacrotask) {
       NeZone.onMacrotaskEmpty.emit(null);
     }
+  }
+
+  static recycle(name) {
+    NeZone.own.scheduleMicroTask(name, () => {});
   }
 }

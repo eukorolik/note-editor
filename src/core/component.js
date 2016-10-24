@@ -1,5 +1,6 @@
 export class Component {
   element;
+  service;
 
   static selector() {
     return '';
@@ -9,11 +10,17 @@ export class Component {
     return '';
   }
 
-  constructor(element) {
+  constructor(element, service) {
     this.element = element;
+    this.service = service;
   }
 
   static repeat(target, parent, values, callback) {
+
+    while (parent.firstChild) {
+      parent.removeChild(parent.firstChild);
+    }
+
     for (const value of values) {
       const clone = target.cloneNode(true);
       callback(clone, value);

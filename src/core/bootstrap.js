@@ -4,6 +4,6 @@ import {NeZone} from './ne-zone';
 export function bootstrap(element) {
   NeZone.own.run(() => {
     Dispatcher.findComponents(element);
-    NeZone.own.scheduleMicroTask('onLoad', () => {});
+    NeZone.recycle('onLoad');
   });
 }

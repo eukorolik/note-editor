@@ -10,6 +10,7 @@ export class ToolbarComponent extends Component {
     return require('./toolbar.component.pug');
   }
 
+
 }
 
 Registry.register(ToolbarComponent);
